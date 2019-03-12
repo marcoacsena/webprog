@@ -1,15 +1,21 @@
 
-public class Paciente {
+package model.vo;
+
+/**
+ *
+ * @author 80119050
+ */
+public class PacienteVO {
     
     private int id;
     private String nome;
     private String celular;
     private String cpf;
 
-    public Paciente() {
+    public PacienteVO() {
     }
 
-    public Paciente(String nome, String celular, String cpf) {
+    public PacienteVO(String nome, String celular, String cpf) {
         this.nome = nome;
         this.celular = celular;
         this.cpf = cpf;
@@ -50,6 +56,6 @@ public class Paciente {
     @Override
     public String toString() {
         return "Paciente[" + "id:" + id + ", nome:" + nome + ", celular:" + celular + ", cpf:" + cpf + ']';
-    }    
+    }
     
 }
