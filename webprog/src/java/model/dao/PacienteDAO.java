@@ -12,8 +12,8 @@ public class PacienteDAO {
     
     public int inserir(PacienteVO pacienteVO) {
 		int novoId = -1; 
-		
-		String query = "INSERT INTO pacientes (nome, celular, cpf)" + " VALUES (?,?,?,?)";
+                
+		String query = "INSERT INTO pacientes (nome, celular, cpf)" + " VALUES (?,?,?)";
 
 		Connection conn = ConexaoComBanco.getConnection();
 		PreparedStatement prepStmt = ConexaoComBanco.getPreparedStatement(conn, query, Statement.RETURN_GENERATED_KEYS);
@@ -21,8 +21,7 @@ public class PacienteDAO {
 		try {
 			prepStmt.setString(1,  pacienteVO.getNome());			
 			prepStmt.setString(3,  pacienteVO.getCelular());
-                        prepStmt.setString(2,  pacienteVO.getCpf());
-			
+                        prepStmt.setString(2,  pacienteVO.getCpf());			
 
 			prepStmt.executeUpdate();
 
@@ -138,9 +137,9 @@ public class PacienteDAO {
 		return pacientesVO;
 	}
 
-	public PacienteVO consultarFuncionarioPorId(int idPaciente) {
+	public PacienteVO consultarPacientePorCpf(String cpf) {
 				
-		String query = "SELECT * FROM funcionario" + " WHERE idfuncionario = ?";
+		String query = "SELECT * FROM pacientes" + " WHERE id = ?";
 		PacienteVO paciente = null;
 		
 		Connection conn = ConexaoComBanco.getConnection();
@@ -148,17 +147,16 @@ public class PacienteDAO {
 					
 
 		try {
-			prepStmt.setInt(1, idPaciente);
+			prepStmt.setString(1, cpf);
 			ResultSet result = prepStmt.executeQuery();
 
 			while (result.next()){
 				paciente = new PacienteVO();
 				
-				paciente.setId(result.getInt("idFuncionario"));
+				paciente.setId(result.getInt("id"));
 				paciente.setNome(result.getString("nome"));				
 				paciente.setCelular(result.getString("celular"));
 				paciente.setCpf(result.getString("cpf"));
-				
 				
 			}			
 

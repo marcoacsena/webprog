@@ -22,9 +22,10 @@
 
                 <fieldset><legend>Dados do Paciente</legend>
                     <p><a>*</a>Campos de preenchimento obrigatório</p>
-                    Nome<a>*</a>: <input type="text" name="nomePaciente" required><br><br>
-                    Celular<a>*</a>: <input type="text" name="celMen" required><br><br>
-                    CPF<a>*</a>: <input type="text" name="cpfPaciente" required><br><br>
+                    Nome<a>*</a>: <input type="text" name="nomepaciente" required><br><br>
+                    Celular<a>*</a>: <input type="text" name="celularpaciente" required><br><br>
+                    CPF<a>*</a>: <input type="text" name="cpfpaciente" required><br><br>
+                    
                     <input type="submit" value = "Cadastrar Paciente">                
 
                 </fieldset>

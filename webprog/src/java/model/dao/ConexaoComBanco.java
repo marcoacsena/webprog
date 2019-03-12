@@ -25,10 +25,10 @@ public class ConexaoComBanco {
          
     
     private static final String DRIVER_MYSQL = "com.mysql.jdbc.Driver";
-    private static final String NOME_ESQUEMA = "super";
+    private static final String NOME_ESQUEMA = "avimed";
     private static final String URL_CONEXAO = "jdbc:mysql://localhost:3306/" + NOME_ESQUEMA + "?useSSL=false";
     private static final String USUARIO = "root";
-    private static final String SENHA = "123";
+    private static final String SENHA = "";
     
 	public static Connection getConnection() {
             
