@@ -26,31 +26,29 @@ public class ConexaoComBanco {
     
     private static final String DRIVER_MYSQL = "com.mysql.jdbc.Driver";
     private static final String NOME_ESQUEMA = "avimed";
-    private static final String URL_CONEXAO = "jdbc:mysql://localhost:3306/" + NOME_ESQUEMA + "?useSSL=false";
+    private static final String URL_CONEXAO = "jdbc:mysql://localhost:3306/" + NOME_ESQUEMA;
     private static final String USUARIO = "root";
-    private static final String SENHA = "";
+    private static final String SENHA = "123";
     
-	public static Connection getConnection() {
+	public static Connection getConnection() {   
             
-            
-
-		try {
+        	try {
 
 			Connection conn = null;
 
-			//Class.forName(DRIVER_MYSQL);
+			Class.forName(DRIVER_MYSQL);
 
 			conn = DriverManager.getConnection(URL_CONEXAO, USUARIO, SENHA);
 
 			return conn;
 
-		} //catch (ClassNotFoundException e) {
-//
-//			System.out.println("Classe do Driver não foi encontrada. \n" + e.getMessage());
-//
-//			return null;
+		} catch (ClassNotFoundException e) {
 
-		 catch (SQLException e) {
+			System.out.println("Classe do Driver não foi encontrada. \n" + e.getMessage());
+
+			return null;
+
+                }catch (SQLException e) {
 
 			System.out.println("Erro ao obter a Connection.\n" + e.getMessage());
 

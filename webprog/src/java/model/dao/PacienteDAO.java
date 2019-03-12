@@ -13,15 +13,15 @@ public class PacienteDAO {
     public int inserir(PacienteVO pacienteVO) {
 		int novoId = -1; 
                 
-		String query = "INSERT INTO pacientes (nome, celular, cpf)" + " VALUES (?,?,?)";
+		String query = "INSERT INTO pacientes (nome, cpf, celular)" + " VALUES (?,?,?)";
 
 		Connection conn = ConexaoComBanco.getConnection();
 		PreparedStatement prepStmt = ConexaoComBanco.getPreparedStatement(conn, query, Statement.RETURN_GENERATED_KEYS);
 
 		try {
-			prepStmt.setString(1,  pacienteVO.getNome());			
-			prepStmt.setString(3,  pacienteVO.getCelular());
-                        prepStmt.setString(2,  pacienteVO.getCpf());			
+			prepStmt.setString(1,  pacienteVO.getNome());
+			prepStmt.setString(2,  pacienteVO.getCpf());
+                        prepStmt.setString(3,  pacienteVO.getCelular());
 
 			prepStmt.executeUpdate();
 
@@ -154,9 +154,9 @@ public class PacienteDAO {
 				paciente = new PacienteVO();
 				
 				paciente.setId(result.getInt("id"));
-				paciente.setNome(result.getString("nome"));				
-				paciente.setCelular(result.getString("celular"));
+				paciente.setNome(result.getString("nome"));			
 				paciente.setCpf(result.getString("cpf"));
+                                paciente.setCelular(result.getString("celular"));
 				
 			}			
 

@@ -20,17 +20,32 @@ import model.vo.PacienteVO;
  */
 public class CadastrarPaciente extends HttpServlet {
 
-    PacienteVO pacienteVO = new PacienteVO();
+    PacienteVO pacienteVO;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        pacienteVO.setNome(request.getParameter("nomepaciente"));
-        pacienteVO.setCelular(request.getParameter("celularpaciente"));
+        pacienteVO = new PacienteVO();
+        pacienteVO.setNome(request.getParameter("nomepaciente"));        
         pacienteVO.setCpf(request.getParameter("cpfpaciente"));
-                
+        pacienteVO.setCelular(request.getParameter("celularpaciente"));
+        
+        System.out.println(pacienteVO);
+        
         PacienteController pacienteController = new PacienteController();
-        int novoId = pacienteController.cadastrarPacienteVO(pacienteVO);        
+        int novoId = pacienteController.cadastrarPacienteVO(pacienteVO);
+        
+        if(novoId > 0 ){
+            
+            request.setAttribute("idpaciente", novoId);
+            request.setAttribute("nomepaciente", pacienteVO.getNome());
+            request.setAttribute("cpfpaciente", pacienteVO.getCpf());
+            request.setAttribute("celularpaciente", pacienteVO.getCelular());
+            
+            request.getRequestDispatcher("MostrarPacienteCadastrado.jsp").forward(request, response);
+        }
+        
+        
         
     }
 

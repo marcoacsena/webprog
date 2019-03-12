@@ -18,14 +18,15 @@
         <h3>Por gentileza, preencher os dados do paciente a ser cadastrado:</h3> 
 
         <div id="form">
-            <form method="post" action="cadastrar">
+            <form method="post" action="cadastrarpaciente">
 
                 <fieldset><legend>Dados do Paciente</legend>
                     <p><a>*</a>Campos de preenchimento obrigatório</p>
-                    Nome<a>*</a>: <input type="text" name="nomepaciente" required><br><br>
-                    Celular<a>*</a>: <input type="text" name="celularpaciente" required><br><br>
+                    Nome<a>*</a>: <input type="text" name="nomepaciente" required><br><br>                    
                     CPF<a>*</a>: <input type="text" name="cpfpaciente" required><br><br>
+                    Celular<a>*</a>: <input type="text" name="celularpaciente" required><br><br>
                     
+                    <input type="reset" value="Limpar Campos">
                     <input type="submit" value = "Cadastrar Paciente">                
 
                 </fieldset>
