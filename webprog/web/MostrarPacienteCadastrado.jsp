@@ -13,7 +13,7 @@
         <title>Cliente Cadastrado</title>
     </head>
     <body>
-        
+        <br><br>
         <hr>
         <h1>O Paciente foi cadastrado com os seguintes dados:</h1>
         
