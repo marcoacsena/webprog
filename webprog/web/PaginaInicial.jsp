@@ -29,8 +29,7 @@
       
       .container{float:top}
       .menu{float: bottom}
-    </style>
-    
+    </style>    
     
     <div class="container">    
 
@@ -46,13 +45,13 @@
             <!-- The slideshow -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="Slide1.PNG" alt="Los Angeles" width="1100" height="200">
+                    <img src="Slide1.PNG" alt="Senac" width="1500" height="200">
                 </div>
                 <div class="carousel-item">
-                    <img src="Slide2.PNG" alt="Chicago" width="1100" height="200">
+                    <img src="Slide2.PNG" alt="Disciplina" width="1500" height="200">
                 </div>
                 <div class="carousel-item">
-                    <img src="Slide3.PNG" alt="New York" width="1100" height="200">
+                    <img src="Slide3.PNG" alt="Professor" width="1500" height="200">
                 </div>
             </div>
 
@@ -70,11 +69,11 @@
 </head>
 
 
-<body style="height:1500px">
-<div class="corpo">    
+<body>
+    
     <div class="menu">   
 
-        <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center ">
+        <nav class="navbar navbar-expand-sm navbar-dark justify-content-center" style="background-color: cadetblue;">
             <a class="navbar-brand">
                 <img src="icon2.png" alt="logo" style="width:60px; height: 40px;">
             </a>
@@ -142,17 +141,19 @@
                 </ul>
             </div>
         </nav>
-
-
-        <h1>Página Principal do Sistema AVICENA!</h1>
-
     </div>
+
+    
+    <div class="corpo">
+        <br><br><br>
+        <h1 class="titulo">Página Principal do Sistema AVICENA!</h1>
        
-        <footer class="footer">                
+    </div>
+    </div>        <footer class="footer">                
             &copy; Desenvolvido por Luciane Benetti e Marco Sena.
         </footer>
 
-</div>    
+ 
 </body>
 
 </html>

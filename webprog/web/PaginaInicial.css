@@ -8,7 +8,8 @@ and open the template in the editor.
     Author     : 80119050
 */
        
-.corpo {background-color: lightblue;}
+.corpo {background-color: powderblue; height: 700px}
+.titulo {text-align: center}
 .navbar {height: 50px;}
 .nav-item {font-size: x-large;} 
 .nav-link {font-size: x-large; padding: 10px 10px;}
