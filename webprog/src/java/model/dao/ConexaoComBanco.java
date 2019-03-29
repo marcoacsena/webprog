@@ -21,8 +21,7 @@ public class ConexaoComBanco {
 	 * 
 	 * @throws SQLException
 	 *             caso a URL_CONEXAO, USUARIO e/ou SENHA estejam incorretos.
-	 */
-         
+	 */         
     
     private static final String DRIVER_MYSQL = "com.mysql.jdbc.Driver";
     private static final String NOME_ESQUEMA = "avimed";
@@ -33,11 +32,8 @@ public class ConexaoComBanco {
 	public static Connection getConnection() {   
             
         	try {
-
 			Connection conn = null;
-
 			Class.forName(DRIVER_MYSQL);
-
 			conn = DriverManager.getConnection(URL_CONEXAO, USUARIO, SENHA);
 
 			return conn;
@@ -55,10 +51,7 @@ public class ConexaoComBanco {
 			return null;
 
 		}
-
 	}
-
-
 
 	/**
 	 * Fecha uma conexão informada pelo chamador.
@@ -81,10 +74,7 @@ public class ConexaoComBanco {
 			System.out.println("Problema no fechamento da conexão.");
 
 		}
-
 	}
-
-
 
 	/**
 	 * 
@@ -117,10 +107,7 @@ public class ConexaoComBanco {
 			return null;
 
 		}
-
 	}
-
-
 
 	/**
 	 * 
@@ -153,8 +140,6 @@ public class ConexaoComBanco {
 
 	}
 
-
-
 	/**
 	 * 
 	 * Solicita um objeto PreparedStatement para uma conexão. Este objeto serve
@@ -182,10 +167,7 @@ public class ConexaoComBanco {
 			return null;
 
 		}
-
 	}
-
-	
 
 	public static PreparedStatement getPreparedStatement(Connection conn, String sql, int tipoRetorno) {
 
@@ -202,10 +184,7 @@ public class ConexaoComBanco {
 			return null;
 
 		}
-
 	}
-
-
 
 	/**
 	 * 
@@ -235,10 +214,7 @@ public class ConexaoComBanco {
 			System.out.println("Problema no fechamento do PreparedStatement.");
 
 		}
-
 	}
-
-
 
 	/**
 	 * 
@@ -268,7 +244,6 @@ public class ConexaoComBanco {
 			System.out.println("Problema no fechamento do ResultSet");
 
 		}
-
 	}
     
 }

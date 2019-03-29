@@ -13,15 +13,16 @@ public class PacienteDAO {
     public int inserir(PacienteVO pacienteVO) {
 		int novoId = -1; 
                 
-		String query = "INSERT INTO pacientes (nome, cpf, celular)" + " VALUES (?,?,?)";
+		String query = "INSERT INTO paciente (nomePaciente, celMensagemPaciente, cpfPaciente)" + " VALUES (?,?,?)";
 
 		Connection conn = ConexaoComBanco.getConnection();
 		PreparedStatement prepStmt = ConexaoComBanco.getPreparedStatement(conn, query, Statement.RETURN_GENERATED_KEYS);
 
 		try {
-			prepStmt.setString(1,  pacienteVO.getNome());
-			prepStmt.setString(2,  pacienteVO.getCpf());
-                        prepStmt.setString(3,  pacienteVO.getCelular());
+			prepStmt.setString(1,  pacienteVO.getNomePaciente());
+                        prepStmt.setString(2,  pacienteVO.getCelMensagemPaciente());
+			prepStmt.setString(3,  pacienteVO.getCpfPaciente());
+                        
 
 			prepStmt.executeUpdate();
 
@@ -81,9 +82,9 @@ public class PacienteDAO {
 		try {
 			
 						
-			prepStmt.setString(1,  pacienteVO.getNome());
-			prepStmt.setString(2,  pacienteVO.getCpf());
-			prepStmt.setString(3,  pacienteVO.getCelular());
+			prepStmt.setString(1,  pacienteVO.getNomePaciente());			
+			prepStmt.setString(2,  pacienteVO.getCelMensagemPaciente());
+                        prepStmt.setString(3,  pacienteVO.getCpfPaciente());
 			
                         
 			int codigoRetorno = prepStmt.executeUpdate();
@@ -105,9 +106,9 @@ public class PacienteDAO {
 
 	}
 
-	public ArrayList<PacienteVO> listarTodosOsPacientes() {
+	public ArrayList<PacienteVO> listarTodosOsPacientesVO() {
 
-		String query = "select * from funcionario";
+		String query = "select * from paciente";
 
 		Connection conn = ConexaoComBanco.getConnection();
 		PreparedStatement prepStmt = ConexaoComBanco.getPreparedStatement(conn, query);
@@ -120,10 +121,10 @@ public class PacienteDAO {
 			while (resultado.next()) {
 				
 				PacienteVO pacienteVO = new PacienteVO();
-				pacienteVO.setId(resultado.getInt(1));
-				pacienteVO.setNome(resultado.getString("nome"));				
-				pacienteVO.setCelular(resultado.getString("celular"));
-                                pacienteVO.setCpf(resultado.getString("cpf"));
+				pacienteVO.setCodigoPaciente(resultado.getInt(1));
+				pacienteVO.setNomePaciente(resultado.getString("nomePaciente"));				
+				pacienteVO.setCelMensagemPaciente(resultado.getString("celMensagemPaciente"));
+                                pacienteVO.setCpfPaciente(resultado.getString("cpfPaciente"));
 				
 
 				pacientesVO.add(pacienteVO);
@@ -153,10 +154,10 @@ public class PacienteDAO {
 			while (result.next()){
 				paciente = new PacienteVO();
 				
-				paciente.setId(result.getInt("id"));
-				paciente.setNome(result.getString("nome"));			
-				paciente.setCpf(result.getString("cpf"));
-                                paciente.setCelular(result.getString("celular"));
+				paciente.setCodigoPaciente(result.getInt("id"));
+				paciente.setNomePaciente(result.getString("nome"));	
+				paciente.setCelMensagemPaciente(result.getString("celular"));
+                                paciente.setCpfPaciente(result.getString("cpf"));
 				
 			}			
 

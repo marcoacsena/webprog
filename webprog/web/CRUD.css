@@ -8,9 +8,9 @@ and open the template in the editor.
     Author     : 80119050
 */
 
-body {
+.body {
     
-	
+	background-color:lightblue;
 }
 
 a{
@@ -32,8 +32,7 @@ td,th {
     tr:nth-child(odd){background-color: burlywood;}
     
     
-    
-footer{width: 100%; background-color:cadetblue; text-align: center; padding: 8px; margin-top: 200px; 
+.footer {width: 100%; background-color:cadetblue; text-align: center; padding: 8px; margin-top: 200px; 
        margin-left: -1%; bottom: 0px ; position: fixed;}
 
 

@@ -7,55 +7,57 @@ package model.vo;
  */
 public class PacienteVO {
     
-    private int id;
-    private String nome;
-    private String celular;
-    private String cpf;
+    private int codigoPaciente;
+    private String nomePaciente;
+    private String celMensagemPaciente;
+    private String cpfPaciente;
 
     public PacienteVO() {
     }
 
-    public PacienteVO(String nome, String celular, String cpf) {
-        this.nome = nome;
-        this.celular = celular;
-        this.cpf = cpf;
+    public PacienteVO(String nomePaciente, String celMensagemPaciente, String cpfPaciente) {
+        this.nomePaciente = nomePaciente;
+        this.celMensagemPaciente = celMensagemPaciente;
+        this.cpfPaciente = cpfPaciente;
     }
 
-    public int getId() {
-        return id;
+    public int getCodigoPaciente() {
+        return codigoPaciente;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCodigoPaciente(int codigoPaciente) {
+        this.codigoPaciente = codigoPaciente;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomePaciente() {
+        return nomePaciente;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomePaciente(String nomePaciente) {
+        this.nomePaciente = nomePaciente;
     }
 
-    public String getCelular() {
-        return celular;
+    public String getCelMensagemPaciente() {
+        return celMensagemPaciente;
     }
 
-    public void setCelular(String celular) {
-        this.celular = celular;
+    public void setCelMensagemPaciente(String celMensagemPaciente) {
+        this.celMensagemPaciente = celMensagemPaciente;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getCpfPaciente() {
+        return cpfPaciente;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setCpfPaciente(String cpfPaciente) {
+        this.cpfPaciente = cpfPaciente;
     }
 
     @Override
     public String toString() {
-        return "Paciente[" + "id:" + id + ", nome:" + nome + ", celular:" + celular + ", cpf:" + cpf + ']';
+        return "PacienteVO{" + "codigoPaciente=" + codigoPaciente + ", nomePaciente=" + nomePaciente + ", celMensagemPaciente=" + celMensagemPaciente + ", cpfPaciente=" + cpfPaciente + '}';
     }
+
+    
     
 }

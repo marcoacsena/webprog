@@ -10,7 +10,7 @@
 <head>  
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" rel="stylesheet" href="PaginaInicial.css">
+    <link type="text/css" rel="stylesheet" href="CRUD.css">
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">  
@@ -86,7 +86,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="#">Consultar Paciente</a>
                             <a class="dropdown-item" href="CadastrarPaciente.jsp">Cadastrar Paciente</a>
-                            <a class="dropdown-item" href="#">Listar Todos os Pacientes</a>
+                            <a class="dropdown-item" href="listarpacientes">Listar Todos os Pacientes</a>
                             <a class="dropdown-item" href="#">Atualizar Paciente</a> 
                             <a class="dropdown-item" href="#">Excluir Paciente</a>
                         </div>

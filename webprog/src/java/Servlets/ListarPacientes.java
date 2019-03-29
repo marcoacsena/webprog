@@ -5,48 +5,35 @@
  */
 package Servlets;
 
+import controller.PacienteController;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import controller.PacienteController;
 import model.vo.PacienteVO;
 
 /**
  *
  * @author 80119050
  */
-public class CadastrarPaciente extends HttpServlet {
-
-    PacienteVO pacienteVO;
+public class ListarPacientes extends HttpServlet {
+   
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+           
+        PacienteController pacienteController = new PacienteController();        
+        ArrayList<PacienteVO> pacientesVO = pacienteController.listarTodosOsPacientesVO();
         
-        pacienteVO = new PacienteVO();
-        pacienteVO.setNomePaciente(request.getParameter("nomepaciente")); 
-        pacienteVO.setCelMensagemPaciente(request.getParameter("celularpaciente"));
-        pacienteVO.setCpfPaciente(request.getParameter("cpfpaciente"));
-        
-        System.out.println(pacienteVO);
-        
-        PacienteController pacienteController = new PacienteController();
-        int novoId = pacienteController.cadastrarPacienteVO(pacienteVO);
-        
-        if(novoId > 0 ){
-            
-            request.setAttribute("idpaciente", novoId);
-            request.setAttribute("nomepaciente", pacienteVO.getNomePaciente());
-            request.setAttribute("cpfpaciente", pacienteVO.getCpfPaciente());
-            request.setAttribute("celularpaciente", pacienteVO.getCelMensagemPaciente());
-            
-            request.getRequestDispatcher("MostrarPacienteCadastrado.jsp").forward(request, response);
+        System.out.print(pacientesVO);
+                 
+        request.setAttribute("pacientes", pacientesVO);
+        request.getRequestDispatcher("ListarTodosOsPacientes.jsp").forward(request, response);
         }
-        
-        
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

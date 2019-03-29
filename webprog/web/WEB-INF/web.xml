@@ -4,9 +4,17 @@
         <servlet-name>CadastrarPaciente</servlet-name>
         <servlet-class>Servlets.CadastrarPaciente</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListarPacientes</servlet-name>
+        <servlet-class>Servlets.ListarPacientes</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastrarPaciente</servlet-name>
         <url-pattern>/cadastrarpaciente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarPacientes</servlet-name>
+        <url-pattern>/listarpacientes</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

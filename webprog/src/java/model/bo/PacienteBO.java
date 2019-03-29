@@ -5,6 +5,7 @@ package model.bo;
  * @author 80119050
  */
 
+import java.util.ArrayList;
 import model.dao.PacienteDAO;
 import model.vo.PacienteVO;
 
@@ -16,12 +17,17 @@ public class PacienteBO {
         
         int novoId;
         
-        if(pacienteDAO.consultarPacientePorCpf(pacienteVO.getCpf()) != null){
+        if(pacienteDAO.consultarPacientePorCpf(pacienteVO.getCpfPaciente()) != null){
             
             novoId = 0;       
         } else{ novoId = pacienteDAO.inserir(pacienteVO);}
         
         return novoId;
+    }
+
+    public ArrayList<PacienteVO> ListarTodosOsPacientesVO() {
+        
+        return pacienteDAO.listarTodosOsPacientesVO();
     }
     
 }
