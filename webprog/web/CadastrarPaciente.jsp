@@ -12,7 +12,7 @@
         <link type="text/css" rel="stylesheet" href="CRUD.css">
         <title>Cadastrar Paciente</title>
     </head>
-    <body>
+    <body class="body">
         <hr>
         <h1>Cadastro de Paciente</h1>
         <h3>Por gentileza, preencher os dados do paciente a ser cadastrado:</h3> 

@@ -11,9 +11,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link type="text/css" rel="stylesheet" href="CRUD.css">
         <title>Todos os Pacientes da AVICENA</title>
     </head>
-    <body>        
+    <body class="body">        
         <h1>Lista dos pacientes cadastrados na clínica AVICENA</h1><br><br>  
         
        <table>

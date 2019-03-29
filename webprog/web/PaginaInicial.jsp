@@ -134,7 +134,8 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="#">Responsáveis Técnicos</a>
                             <a class="dropdown-item" href="#">Informações do Sistema</a>
-                            <a class="dropdown-item" href="#">Contatos</a> 
+                            <a class="dropdown-item" href="#">Contatos</a>
+                            <a class="dropdown-item" href="<% request.logout();%>">Sair</a>
 
                         </div>
                     </li>
