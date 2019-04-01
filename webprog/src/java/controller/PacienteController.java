@@ -24,5 +24,12 @@ public class PacienteController {
         return pacienteBO.ListarTodosOsPacientesVO();
         
     }
+
+    public PacienteVO pesquisarPacienteVOPorCpf(String cpfPaciente) {
+       
+        return pacienteBO.pesquisarPacienteVOPorCpf(cpfPaciente);
+    }
+
+    
     
 }

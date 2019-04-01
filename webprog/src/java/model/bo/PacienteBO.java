@@ -12,12 +12,12 @@ import model.vo.PacienteVO;
 public class PacienteBO {
         
     PacienteDAO pacienteDAO = new PacienteDAO();
-      
+          
     public int cadastrarPacienteVO(PacienteVO pacienteVO) {
         
         int novoId;
         
-        if(pacienteDAO.consultarPacientePorCpf(pacienteVO.getCpfPaciente()) != null){
+        if(pacienteDAO.pesquisarPacienteVOPorCpf(pacienteVO.getCpfPaciente()) != null){
             
             novoId = 0;       
         } else{ novoId = pacienteDAO.inserir(pacienteVO);}
@@ -29,5 +29,12 @@ public class PacienteBO {
         
         return pacienteDAO.listarTodosOsPacientesVO();
     }
+
+    public PacienteVO pesquisarPacienteVOPorCpf(String cpfPaciente) {       
+        
+        return pacienteDAO.pesquisarPacienteVOPorCpf(cpfPaciente);
+    }
+
+   
     
 }

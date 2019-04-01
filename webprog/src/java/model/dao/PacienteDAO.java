@@ -138,26 +138,26 @@ public class PacienteDAO {
 		return pacientesVO;
 	}
 
-	public PacienteVO consultarPacientePorCpf(String cpf) {
+	public PacienteVO pesquisarPacienteVOPorCpf(String cpfPaciente) {
 				
-		String query = "SELECT * FROM pacientes" + " WHERE id = ?";
-		PacienteVO paciente = null;
+		String query = "SELECT * FROM paciente" + " WHERE cpfPaciente = ?";
+		PacienteVO pacienteVO = null;
 		
 		Connection conn = ConexaoComBanco.getConnection();
 		PreparedStatement prepStmt = ConexaoComBanco.getPreparedStatement(conn, query);
 					
 
 		try {
-			prepStmt.setString(1, cpf);
+			prepStmt.setString(1, cpfPaciente);
 			ResultSet result = prepStmt.executeQuery();
 
 			while (result.next()){
-				paciente = new PacienteVO();
+				pacienteVO = new PacienteVO();
 				
-				paciente.setCodigoPaciente(result.getInt("id"));
-				paciente.setNomePaciente(result.getString("nome"));	
-				paciente.setCelMensagemPaciente(result.getString("celular"));
-                                paciente.setCpfPaciente(result.getString("cpf"));
+				pacienteVO.setCodigoPaciente(result.getInt("codigoPaciente"));
+				pacienteVO.setNomePaciente(result.getString("nomePaciente"));	
+				pacienteVO.setCelMensagemPaciente(result.getString("celMensagemPaciente"));
+                                pacienteVO.setCpfPaciente(result.getString("cpfPaciente"));
 				
 			}			
 
@@ -167,7 +167,7 @@ public class PacienteDAO {
 			ConexaoComBanco.closeStatement(conn);
 			ConexaoComBanco.closeConnection(conn);
 		}
-		return paciente;
+		return pacienteVO;
 	}
 
     
