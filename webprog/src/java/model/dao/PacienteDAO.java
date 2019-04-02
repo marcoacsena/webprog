@@ -74,7 +74,7 @@ public boolean atualizarPacienteVO(PacienteVO pacienteVO) {
 
     boolean atualizacao = false;
 
-    String query = "UPDATE paciente SET nomePaciente = ?" +" WHERE cpfPaciente = ?";
+    String query = "UPDATE paciente SET nomePaciente = ? WHERE cpfPaciente = ?";
 
         Connection conn = ConexaoComBanco.getConnection();
         PreparedStatement prepStmt = ConexaoComBanco.getPreparedStatement(conn, query);

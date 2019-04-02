@@ -40,10 +40,10 @@
 
                 <fieldset><legend>Dados do Paciente</legend>
                     
-                    Identificação: <input type="text" value="<%= request.getAttribute("codigopaciente")%>"><br><br>
-                    Nome: <input type="text" value="<%= request.getAttribute("nomepaciente")%>"><br><br>            
-                    Celular: <input type="text" value="<%= request.getAttribute("celmenpaciente")%>"><br><br>
-                    CPF: <input type="text" value="<%= request.getAttribute("cpfpaciente")%>"><br><br>
+                    Identificação: <input type="text" name="codigopaciente" value="<%= request.getAttribute("codigopaciente")%>"><br><br>
+                    Nome: <input type="text" name="nomepaciente" value="<%= request.getAttribute("nomepaciente")%>"><br><br>            
+                    Celular: <input name="celmenpaciente" type="text" value="<%= request.getAttribute("celmenpaciente")%>"><br><br>
+                    CPF: <input type="text" name="cpfpaciente" value="<%= request.getAttribute("cpfpaciente")%>"><br><br>
                     
                     <input type="submit" value="Atualizar Dados do Paciente">
                 </fieldset>
