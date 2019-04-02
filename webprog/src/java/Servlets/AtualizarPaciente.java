@@ -17,22 +17,24 @@ PacienteVO pacienteVO = new PacienteVO();
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {       
         
-        //pacienteVO.setCodigoPaciente(Integer.parseInt(request.getParameter("codigopaciente")));
+        pacienteVO.setCodigoPaciente(Integer.parseInt(request.getParameter("codigopaciente")));
         pacienteVO.setNomePaciente(request.getParameter("nomepaciente"));
         pacienteVO.setCelMensagemPaciente(request.getParameter("celmenpaciente"));
         pacienteVO.setCpfPaciente(request.getParameter("cpfpaciente")); 
+        
+        
                               
             PacienteController pacientecontroller = new PacienteController();
             boolean atualizado = pacientecontroller.atualizarPacienteVO(pacienteVO);
             
             if(atualizado){
-                            
-                request.setAttribute("atualizacao", atualizado);
+                
+                String resultadoDaAtualizacao = "Dados do Paciente atualizados!";
+                request.setAttribute("atualizacao", resultadoDaAtualizacao);
+            }else {String resultadoDaAtualizacao = "Não foi possível atualizar os dados do Paciente!"; 
+                request.setAttribute("atualizacao", resultadoDaAtualizacao);}
              
                 request.getRequestDispatcher("PesquisarPacientePorCpf.jsp").forward(request, response);
-                
-            }else {System.out.println("Paciente não foi encontrado!");}
-    }
-
-  
+           
+    }      
 }

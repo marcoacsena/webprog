@@ -69,41 +69,37 @@ public class PacienteDAO {
 		}
 		return sucesso;
 	}
+        
+public boolean atualizarPacienteVO(PacienteVO pacienteVO) {
 
-	public boolean atualizarPacienteVO(PacienteVO pacienteVO) {
+    boolean atualizacao = false;
 
-		boolean atualizacao = false;
+    String query = "UPDATE paciente SET nomePaciente = ?" +" WHERE cpfPaciente = ?";
 
-		String query = "UPDATE paciente SET nome=?, cpf=?, telefone=? " + " WHERE cpfPaciente = ?";
+        Connection conn = ConexaoComBanco.getConnection();
+        PreparedStatement prepStmt = ConexaoComBanco.getPreparedStatement(conn, query);
 
-		Connection conn = ConexaoComBanco.getConnection();
-		PreparedStatement prepStmt = ConexaoComBanco.getPreparedStatement(conn, query);
+        try {
+            prepStmt.setString(2, pacienteVO.getCpfPaciente());
+            prepStmt.setString(1, pacienteVO.getNomePaciente());
+            
 
-		try {	
-						
-			prepStmt.setString(1,  pacienteVO.getNomePaciente());			
-			prepStmt.setString(2,  pacienteVO.getCelMensagemPaciente());
-                        prepStmt.setString(3,  pacienteVO.getCpfPaciente());
-			
-                        
-			int codigoRetorno = prepStmt.executeUpdate();
-			
+            int codigoRetorno = prepStmt.executeUpdate();
 
-			if(codigoRetorno == 1){
-				atualizacao = true;
-			}
-			
+            if (codigoRetorno == 1) {
+                atualizacao = true;
+            }
 
-		}catch (SQLException e) {
-			System.out.println("Erro ao executar Query de Atualização do Funcionário! Causa: \n: " + e.getMessage());
-		}finally {
-			ConexaoComBanco.closePreparedStatement(prepStmt);
-			ConexaoComBanco.closeConnection(conn);
-		}
-		
-		return atualizacao;
+        } catch (SQLException e) {
+            System.out.println("Erro ao executar Query de Atualização do Paciente! Causa: \n: " + e.getMessage());
+        } finally {
+            ConexaoComBanco.closePreparedStatement(prepStmt);
+            ConexaoComBanco.closeConnection(conn);
+        }
 
-	}
+        return atualizacao;
+
+    }
 
 	public ArrayList<PacienteVO> listarTodosOsPacientesVO() {
 

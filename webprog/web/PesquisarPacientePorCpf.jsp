@@ -50,18 +50,12 @@
             </form><br><br>
             
             <% 
-                boolean resultadoDaAtualizacao = (boolean) request.getAttribute("atualizdo");
-                
-                if(resultadoDaAtualizacao){
-                %>
-                <input type="text" value="Dados atualizados"><br><br>
-                <%                
-                }else{%> 
-                
-                <input type="text" value="Dados atualizados"><br><br>
-                <%}%>
-                                                      
-            <input type="button" value = "Retornar para a Página Principal do SISTEMA AVICENA" onclick="history.go(-2)">
+                String resultadoDaAtualizacao = (String) request.getAttribute("atualizacao");                
+               
+                %>                
+                <input type="text" value="<%= resultadoDaAtualizacao%>" size="100"><br><br>
+                                       
+                <input type="button" value = "Retornar para a Página Principal do SISTEMA AVICENA" onclick="history.go(-2)">
             <br>
             
         </div>
