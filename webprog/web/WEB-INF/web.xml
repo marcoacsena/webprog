@@ -12,6 +12,10 @@
         <servlet-name>PesquisarPacientePorCpf</servlet-name>
         <servlet-class>Servlets.PesquisarPacientePorCpf</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>atualizarpaciente</servlet-name>
+        <servlet-class>Servlets.AtualizarPaciente</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastrarPaciente</servlet-name>
         <url-pattern>/cadastrarpaciente</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>PesquisarPacientePorCpf</servlet-name>
         <url-pattern>/pesquisarpacienteporcpf</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>atualizarpaciente</servlet-name>
+        <url-pattern>/atualizarpaciente</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

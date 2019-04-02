@@ -70,17 +70,16 @@ public class PacienteDAO {
 		return sucesso;
 	}
 
-	public boolean atualizar(PacienteVO pacienteVO) {
+	public boolean atualizarPacienteVO(PacienteVO pacienteVO) {
 
-		boolean sucesso = false;
+		boolean atualizacao = false;
 
-		String query = "UPDATE funcionario SET nome=?, cpf=?, telefone=?, email=? " + "WHERE idfuncionario = ?";
+		String query = "UPDATE paciente SET nome=?, cpf=?, telefone=? " + " WHERE cpfPaciente = ?";
 
 		Connection conn = ConexaoComBanco.getConnection();
 		PreparedStatement prepStmt = ConexaoComBanco.getPreparedStatement(conn, query);
 
-		try {
-			
+		try {	
 						
 			prepStmt.setString(1,  pacienteVO.getNomePaciente());			
 			prepStmt.setString(2,  pacienteVO.getCelMensagemPaciente());
@@ -91,7 +90,7 @@ public class PacienteDAO {
 			
 
 			if(codigoRetorno == 1){
-				sucesso = true;
+				atualizacao = true;
 			}
 			
 
@@ -102,7 +101,7 @@ public class PacienteDAO {
 			ConexaoComBanco.closeConnection(conn);
 		}
 		
-		return sucesso;
+		return atualizacao;
 
 	}
 

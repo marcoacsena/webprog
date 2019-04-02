@@ -9,12 +9,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link type="text/css" rel="stylesheet" href="CRUD.css">
+        <title>Pesquisa de Pacientes por CPF</title>
     </head>
-    <body>
-        <h1>Pesquisar Paciente por CPF!</h1>
-        
+    <body class="body">
+               
         <div id="consultaCPF">
+            <h3>Pesquisar Paciente por CPF!</h3>
+            
             <form method="post" action="pesquisarpacienteporcpf">
 
                 <fieldset><legend>Digite o CPF do Paciente a ser consultado na base de dados</legend>
@@ -22,20 +24,19 @@
                     
                     CPF<a>*</a>: 
                     <input type="text" name="cpfpaciente" required><br><br>
-                                        
-                    <input type="reset" value="Limpar Campos">
+                               
                     <input type="submit" value = "Pesquisar Paciente">                
 
                 </fieldset>
             </form>
-            <br><br>  <hr><hr>
+            <br><br>  
             
         </div>
         
         <div id="resultadoCPF">
             
-            <h1>Resultado da pesquisa de Paciente por CPF:</h1>
-            <form>
+            <h3>Resultado da pesquisa de Paciente por CPF:</h3>
+            <form action="atualizarpaciente" method="post">
 
                 <fieldset><legend>Dados do Paciente</legend>
                     
@@ -43,10 +44,24 @@
                     Nome: <input type="text" value="<%= request.getAttribute("nomepaciente")%>"><br><br>            
                     Celular: <input type="text" value="<%= request.getAttribute("celmenpaciente")%>"><br><br>
                     CPF: <input type="text" value="<%= request.getAttribute("cpfpaciente")%>"><br><br>
+                    
+                    <input type="submit" value="Atualizar Dados do Paciente">
                 </fieldset>
-            </form>
-                                            
-            <input type="button" value = "Retornar para a Página Principal do SISTEMA AVICENA" onclick="history.go(-1)">
+            </form><br><br>
+            
+            <% 
+                boolean resultadoDaAtualizacao = (boolean) request.getAttribute("atualizdo");
+                
+                if(resultadoDaAtualizacao){
+                %>
+                <input type="text" value="Dados atualizados"><br><br>
+                <%                
+                }else{%> 
+                
+                <input type="text" value="Dados atualizados"><br><br>
+                <%}%>
+                                                      
+            <input type="button" value = "Retornar para a Página Principal do SISTEMA AVICENA" onclick="history.go(-2)">
             <br>
             
         </div>

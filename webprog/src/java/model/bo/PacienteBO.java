@@ -1,9 +1,5 @@
 package model.bo;
 
-/**
- *
- * @author 80119050
- */
 
 import java.util.ArrayList;
 import model.dao.PacienteDAO;
@@ -33,6 +29,17 @@ public class PacienteBO {
     public PacienteVO pesquisarPacienteVOPorCpf(String cpfPaciente) {       
         
         return pacienteDAO.pesquisarPacienteVOPorCpf(cpfPaciente);
+    }
+
+    public boolean atualizarPacienteVO(PacienteVO pacienteVO) {
+        boolean atualizacao = false;
+        
+        if(pacienteDAO.atualizarPacienteVO(pacienteVO)){
+            
+            atualizacao = true;        
+        }
+        
+        return atualizacao;
     }
 
    

@@ -30,6 +30,11 @@ public class PacienteController {
         return pacienteBO.pesquisarPacienteVOPorCpf(cpfPaciente);
     }
 
+    public Boolean atualizarPacienteVO(PacienteVO pacienteVO) {
+                
+        return pacienteBO.atualizarPacienteVO(pacienteVO);
+    }
+
     
     
 }

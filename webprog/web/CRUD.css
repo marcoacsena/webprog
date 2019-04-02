@@ -8,9 +8,9 @@ and open the template in the editor.
     Author     : 80119050
 */
 
-.body {
-    
-	background-color:lightblue;
+.body {    
+	background-color:yellow;
+        width: 100%;
 }
 
 a{
@@ -20,19 +20,19 @@ a{
 #consultaCPF {
     background-color: lightblue; 
     padding: 5px;
-    margin-top: 1px;/*Margen superior com 1 pixel*/
+    margin-top: 0px;/*Margen superior com 1 pixel*/
     float: left;/*propriedade indicando que a Área flutuará a esquerda*/
     width: 24%; /*Ocupando 24% da largura total destinada para o corpo*/
-    height: 506px; /*Altura de 500 pixels*/
+    height: 700px; /*Altura de 500 pixels*/
 }
 #resultadoCPF {
     background-color: lightblue;/*Cor de fundo*/    
     padding: 5px;/*Margen interna de 3 pixels*/
     float: right;/*propriedade indicando que a Área flutuará a direita*/
-    margin-top: 1px;/*Margen superior com 1 pixel*/
-    margin-left: 0,5px;
-    width: 70%;/*Ocupando 74% da largura total destinada para o corpo*/
-    height: 506px;/*Altura de 494 pixels*/
+    margin-top: 0px;/*Margen superior com 1 pixel*/
+    margin-left: 0.1px;
+    width: 74.5%;/*Ocupando 74% da largura total destinada para o corpo*/
+    height: 700px;/*Altura de 494 pixels*/
 }
 
 td,th {
