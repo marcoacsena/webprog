@@ -42,32 +42,30 @@ public class PacienteDAO {
 		return novoId;
 	}
 
-	public boolean delete(int idPaciente) {
+	public boolean Excluir(String cpfPaciente) {
 		
-		boolean sucesso = false;
-
-		String query = "DELETE FROM funcionario WHERE idfuncionario = ? ";
+		boolean sucessoNaExclusao = false;
+                
+                String query = "DELETE from paciente where cpfPaciente = ? ";
 
 		Connection conn = ConexaoComBanco.getConnection();
 		PreparedStatement prepStmt = ConexaoComBanco.getPreparedStatement(conn, query);
 
 		try {
-			prepStmt.setInt(1,  idPaciente);
-
+			prepStmt.setString(1, cpfPaciente);
 			int codigoRetorno = prepStmt.executeUpdate();
-
-			if(codigoRetorno == 1){
-				sucesso = true;				
+			if (codigoRetorno == 1) {
+				sucessoNaExclusao = true;
 			}
-
-			
-		}catch (SQLException e) {
-			System.out.println("Erro ao executar Query de Exclusão do Funcionario! Causa: \n: " + e.getMessage());
-		}finally {
+		} catch (SQLException e) {
+			System.out.println("Erro ao executar Query de Exclus�o do Paciente! Causa: \n: " + e.getMessage());
+		} finally {
 			ConexaoComBanco.closePreparedStatement(prepStmt);
 			ConexaoComBanco.closeConnection(conn);
 		}
-		return sucesso;
+		return sucessoNaExclusao;
+
+		
 	}
         
 public boolean atualizarPacienteVO(PacienteVO pacienteVO) {

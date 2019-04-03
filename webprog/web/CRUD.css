@@ -10,7 +10,8 @@ and open the template in the editor.
 
 .body {    
 	background-color:yellow;
-        width: 100%;
+        width: 99.9%;
+        padding: 0px;
 }
 
 a{
@@ -21,8 +22,9 @@ a{
     background-color: lightblue; 
     padding: 5px;
     margin-top: 0px;/*Margen superior com 1 pixel*/
+    margin-right: -1px;
     float: left;/*propriedade indicando que a Área flutuará a esquerda*/
-    width: 24%; /*Ocupando 24% da largura total destinada para o corpo*/
+    width: 26%; /*Ocupando 24% da largura total destinada para o corpo*/
     height: 700px; /*Altura de 500 pixels*/
 }
 #resultadoCPF {
@@ -31,7 +33,7 @@ a{
     float: right;/*propriedade indicando que a Área flutuará a direita*/
     margin-top: 0px;/*Margen superior com 1 pixel*/
     margin-left: 0.1px;
-    width: 74.5%;/*Ocupando 74% da largura total destinada para o corpo*/
+    width: 72.5%;/*Ocupando 74% da largura total destinada para o corpo*/
     height: 700px;/*Altura de 494 pixels*/
 }
 
