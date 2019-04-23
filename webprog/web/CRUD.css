@@ -1,21 +1,35 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 11/03/2019, 13:50:23
-    Author     : 80119050
-*/
-
 .body {    
-	background-color:yellow;
-        width: 99.9%;
+	background-color:lightblue;
+        width: 100%;
         padding: 0px;
 }
 
 a{
 	color: red;
+}
+
+#form1 {
+    
+    background-color: lightblue; 
+    padding: 5px;
+    margin-top: 0px;/*Margen superior com 1 pixel*/
+    margin-right: -1px;
+    float: left;/*propriedade indicando que a Área flutuará a esquerda*/
+    width: 44%; /*Ocupando 24% da largura total destinada para o corpo*/
+    height: 700px; /*Altura de 500 pixels*/   
+}
+
+#form2 {
+    
+    
+    background-color: lightblue; 
+    padding: 5px;
+    margin-top: 0px;/*Margen superior com 1 pixel*/
+    margin-right: -1px;
+    float: left;/*propriedade indicando que a Área flutuará a esquerda*/
+    width: 50%; /*Ocupando 24% da largura total destinada para o corpo*/
+    height: 700px; /*Altura de 500 pixels*/
+    
 }
 
 #consultaCPF {
