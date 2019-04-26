@@ -6,7 +6,6 @@
 package Servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -28,7 +27,18 @@ public class CadastrarPaciente extends HttpServlet {
         pacienteVO = new PacienteVO();
         pacienteVO.setNomePaciente(request.getParameter("nomepaciente")); 
         pacienteVO.setCelMensagemPaciente(request.getParameter("celularpaciente"));
+        pacienteVO.setFoneResidencial(request.getParameter("foneresidencial"));
+        pacienteVO.setFoneComercial(request.getParameter("fonecomercial"));
+        pacienteVO.setEmailPaciente(request.getParameter("email"));
         pacienteVO.setCpfPaciente(request.getParameter("cpfpaciente"));
+        pacienteVO.setCnpjPaciente(request.getParameter("cnpjpaciente"));
+        pacienteVO.setLogradouro(request.getParameter("logradouro"));
+        pacienteVO.setNumLogradouro(request.getParameter("numlogradouro"));
+        pacienteVO.setComplemento(request.getParameter("complemento"));
+        pacienteVO.setBairro(request.getParameter("bairro"));
+        pacienteVO.setCidade(request.getParameter("cidade"));
+        pacienteVO.setUf(request.getParameter("uf"));
+        pacienteVO.setCep(request.getParameter("cep"));
         
         System.out.println(pacienteVO);
         
@@ -39,8 +49,20 @@ public class CadastrarPaciente extends HttpServlet {
             
             request.setAttribute("idpaciente", novoId);
             request.setAttribute("nomepaciente", pacienteVO.getNomePaciente());
-            request.setAttribute("cpfpaciente", pacienteVO.getCpfPaciente());
             request.setAttribute("celularpaciente", pacienteVO.getCelMensagemPaciente());
+            request.setAttribute("foneresidencial", pacienteVO.getFoneResidencial());
+            request.setAttribute("fonecomercial", pacienteVO.getFoneComercial());  
+            request.setAttribute("email", pacienteVO.getEmailPaciente());
+            request.setAttribute("cpfpaciente", pacienteVO.getCpfPaciente());
+            request.setAttribute("cnpjpaciente", pacienteVO.getCnpjPaciente());
+            request.setAttribute("logradouro", pacienteVO.getLogradouro());
+            request.setAttribute("numlogradouro", pacienteVO.getNumLogradouro());
+            request.setAttribute("complemento", pacienteVO.getComplemento());
+            request.setAttribute("bairro", pacienteVO.getBairro());
+            request.setAttribute("cidade", pacienteVO.getCidade());
+            request.setAttribute("uf", pacienteVO.getUf());
+            request.setAttribute("cep", pacienteVO.getCep());
+            
             
             request.getRequestDispatcher("MostrarPacienteCadastrado.jsp").forward(request, response);
         }

@@ -16,22 +16,45 @@
         <br><br>
         <hr>
         <h1>O Paciente foi cadastrado com os seguintes dados:</h1>
-        
-        <div id="form">
-            <form>
+              
+          <div id="form1">
+            <form method="post" action="cadastrarpaciente">
 
-                <fieldset><legend>Dados do Paciente</legend>
-                    
+                <fieldset><legend>Paciente</legend>
+                    <br>
                     Identificação: <input type="text" value="<%= request.getAttribute("idpaciente")%>"><br><br>
-                    Nome: <input type="text" value="<%= request.getAttribute("nomepaciente")%>"><br><br>                    
-                    CPF: <input type="text" value="<%= request.getAttribute("cpfpaciente")%>"><br><br>
-                    Celular: <input type="text" value="<%= request.getAttribute("celularpaciente")%>"><br><br>
+                    Nome: <input type="text" value="<%= request.getAttribute("nomepaciente")%>"><br><br>
+                    Celular: <input type="text" size="10" value="<%= request.getAttribute("celularpaciente")%>"> Fone Residencial: <input type="text" size="10" value="<%= request.getAttribute("foneresidencial")%>"> Fone Comercial: <input type="text" size="10" value="<%= request.getAttribute("fonecomercial")%>"><br><br>
+                    e-mail: <input type="email" size="80" value="<%= request.getAttribute("email")%>"><br><br>
+                    CPF: <input type="text" value="<%= request.getAttribute("cpfpaciente")%>"> CNPJ: <input type="text" value="<%= request.getAttribute("cnpjpaciente")%>"><br><br>
+                    
                 </fieldset>
-            </form>
-            <br><br>
-            <input type="button" value = "Retornar para a Página Principal do SISTEMA AVICENA" onclick="history.go(-2)">
-            <br>
-        </div>
+
+                <br><br>
+                <input type="button" value = "Retornar para a Página Principal do SISTEMA AVICENA" onclick="history.go(-1)">
+                <br>
+                </div>
+
+                <div id="form2">
+                    
+                    <fieldset><legend>Endereço</legend>
+                        <br>
+                        Rua: <input type="text" size="80" value="<%= request.getAttribute("logradouro")%>"> Num: <input type="text" size="3" value="<%= request.getAttribute("numlogradouro")%>"><br><br>
+                        Complemento: <input type="text" size="80" value="<%= request.getAttribute("complemento")%>"><br><br>
+                        Bairro: <input type="text" value="<%= request.getAttribute("bairro")%>"> Cidade: <input type="text" value="<%= request.getAttribute("cidade")%>"> UF: <select style="width:150px;" value="<%= request.getAttribute("uf")%>"><option selected disabled>Selecione um estado</option>
+                            <option>AC</option>
+                            <option>AM</option>
+                            <option>AP</option>
+                        
+                            
+                        </select><br><br>
+                        CEP: <input type="text" value="<%= request.getAttribute("cep")%>"> 
+                            <br><br>
+                    </fieldset>
+                </div>
+            </form> 
+              
+               <input type="button" value = "Retornar para a Página Principal do SISTEMA AVICENA" onclick="history.go(-2)">
 
         <footer class="footer">                
             &copy; Desenvolvido por Luciane Benetti e Marco Sena.

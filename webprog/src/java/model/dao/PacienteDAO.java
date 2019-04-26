@@ -13,7 +13,11 @@ public class PacienteDAO {
     public int inserir(PacienteVO pacienteVO) {
 		int novoId = -1; 
                 
-		String query = "INSERT INTO paciente (nomePaciente, celMensagemPaciente, cpfPaciente)" + " VALUES (?,?,?)";
+		String query = "INSERT INTO paciente (nomePaciente, celMensagemPaciente, "
+                        + "foneResidencial, foneComercial, emailPaciente, cpfPaciente"
+                        + "cnpjPaciente, logradouro, numeroLogradouro, complemento, bairro"
+                        + "cidade, uf, cep)" 
+                        + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 		Connection conn = ConexaoComBanco.getConnection();
 		PreparedStatement prepStmt = ConexaoComBanco.getPreparedStatement(conn, query, Statement.RETURN_GENERATED_KEYS);
@@ -21,9 +25,19 @@ public class PacienteDAO {
 		try {
 			prepStmt.setString(1,  pacienteVO.getNomePaciente());
                         prepStmt.setString(2,  pacienteVO.getCelMensagemPaciente());
-			prepStmt.setString(3,  pacienteVO.getCpfPaciente());
-                        
-
+			prepStmt.setString(3,  pacienteVO.getFoneResidencial());
+                        prepStmt.setString(4,  pacienteVO.getFoneComercial());
+                        prepStmt.setString(5,  pacienteVO.getEmailPaciente());
+			prepStmt.setString(6,  pacienteVO.getCpfPaciente());
+                        prepStmt.setString(7,  pacienteVO.getCnpjPaciente());
+                        prepStmt.setString(8,  pacienteVO.getLogradouro());
+			prepStmt.setString(9,  pacienteVO.getNumLogradouro());
+                        prepStmt.setString(10,  pacienteVO.getComplemento());
+                        prepStmt.setString(11,  pacienteVO.getBairro());
+			prepStmt.setString(12,  pacienteVO.getCidade());
+                        prepStmt.setString(13,  pacienteVO.getUf());
+                        prepStmt.setString(14,  pacienteVO.getCep());
+			
 			prepStmt.executeUpdate();
 
 			ResultSet generatedKeys = prepStmt.getGeneratedKeys();
