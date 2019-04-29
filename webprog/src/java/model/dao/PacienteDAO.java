@@ -118,21 +118,32 @@ public boolean atualizarPacienteVO(PacienteVO pacienteVO) {
 		Connection conn = ConexaoComBanco.getConnection();
 		PreparedStatement prepStmt = ConexaoComBanco.getPreparedStatement(conn, query);
 		
-		ArrayList<PacienteVO> pacientesVO = new ArrayList<PacienteVO>();
+		ArrayList<PacienteVO> paciente = new ArrayList<PacienteVO>();
 		
 		try {
 			ResultSet resultado = prepStmt.executeQuery(query);
 
 			while (resultado.next()) {
 				
-				PacienteVO pacienteVO = new PacienteVO();
-				pacienteVO.setCodigoPaciente(resultado.getInt(1));
-				pacienteVO.setNomePaciente(resultado.getString("nomePaciente"));				
-				pacienteVO.setCelMensagemPaciente(resultado.getString("celMensagemPaciente"));
-                                pacienteVO.setCpfPaciente(resultado.getString("cpfPaciente"));
+                            PacienteVO pacienteVO = new PacienteVO();
+                            pacienteVO.setCodigoPaciente(resultado.getInt(1));
+			    pacienteVO.setNomePaciente(resultado.getString("nomePaciente"));				
+			    pacienteVO.setCelMensagemPaciente(resultado.getString("celMensagemPaciente"));
+                            pacienteVO.setFoneResidencial(resultado.getString("foneResidencial"));
+                            pacienteVO.setFoneComercial(resultado.getString("foneComercial"));
+                            pacienteVO.setEmailPaciente(resultado.getString("emailPaciente"));
+                            pacienteVO.setCpfPaciente(resultado.getString("cpfPaciente"));
+                            pacienteVO.setCnpjPaciente(resultado.getString("cnpjPaciente"));
+                            pacienteVO.setLogradouro(resultado.getString("logradouro"));
+                            pacienteVO.setNumLogradouro(resultado.getString("numeroLogradouro"));
+                            pacienteVO.setComplemento(resultado.getString("complemento"));
+                            pacienteVO.setBairro(resultado.getString("bairro"));
+                            pacienteVO.setCidade(resultado.getString("cidade"));
+                            pacienteVO.setUf(resultado.getString("uf"));
+                            pacienteVO.setCep(resultado.getString("cep"));
 				
 
-				pacientesVO.add(pacienteVO);
+				paciente.add(pacienteVO);
 			}				
 			
 			
@@ -140,7 +151,7 @@ public boolean atualizarPacienteVO(PacienteVO pacienteVO) {
 			e.printStackTrace();
 		}
 
-		return pacientesVO;
+		return paciente;
 	}
 
 	public PacienteVO pesquisarPacienteVOPorCpf(String cpfPaciente) {

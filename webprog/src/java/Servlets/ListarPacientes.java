@@ -29,10 +29,14 @@ public class ListarPacientes extends HttpServlet {
         PacienteController pacienteController = new PacienteController();        
         ArrayList<PacienteVO> pacientesVO = pacienteController.listarTodosOsPacientesVO();
         
-        System.out.print(pacientesVO);
+        if(pacientesVO != null){
+            request.setAttribute("pacientes", pacientesVO);
+            request.getRequestDispatcher("ListarTodosOsPacientes.jsp").forward(request, response);
+            //System.out.print(pacientesVO);
+            }
+        
                  
-        request.setAttribute("pacientes", pacientesVO);
-        request.getRequestDispatcher("ListarTodosOsPacientes.jsp").forward(request, response);
+        
         }
     }
 

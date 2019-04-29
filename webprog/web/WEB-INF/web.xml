@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>CadastrarPaciente</servlet-name>
+        <servlet-name>Crud</servlet-name>
         <servlet-class>Servlets.Crud</servlet-class>
     </servlet>
     <servlet>
@@ -12,8 +12,12 @@
         <servlet-name>atualizarpaciente</servlet-name>
         <servlet-class>Servlets.AtualizarPaciente</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListarPacientes</servlet-name>
+        <servlet-class>Servlets.ListarPacientes</servlet-class>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>CadastrarPaciente</servlet-name>
+        <servlet-name>Crud</servlet-name>
         <url-pattern>/crud</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>atualizarpaciente</servlet-name>
         <url-pattern>/atualizarpaciente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarPacientes</servlet-name>
+        <url-pattern>/listarpacientes</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>PaginaInicial.jsp</welcome-file>

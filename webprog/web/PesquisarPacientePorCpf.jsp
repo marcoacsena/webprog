@@ -15,7 +15,7 @@
     <body class="body">
                
         <div id="consultaCPF">
-            <h3>Pesquisar Paciente por CPF!</h3>
+            <h2>Pesquisar Paciente por CPF!</h2>
             
             <form method="post" action="pesquisarpacienteporcpf">
 
@@ -35,7 +35,7 @@
         
         <div id="resultadoCPF">
             
-            <h3>Resultado da pesquisa de Paciente por CPF:</h3>
+            <h2>Resultado da pesquisa de Paciente por CPF:</h2>
             <form action="atualizarpaciente" method="post">
 
                 <fieldset><legend>Dados do Paciente</legend>

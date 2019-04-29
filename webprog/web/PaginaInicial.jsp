@@ -85,7 +85,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="PesquisarPacientePorCpf.jsp">Pesquisar Paciente Por CPF</a>
                             <a class="dropdown-item" href="CadastrarPaciente.jsp">Cadastrar Paciente</a>
-                            <a class="dropdown-item" href="ListarTodosOsPacientes.jsp">Listar Todos os Pacientes</a>
+                            <a class="dropdown-item" href="listarpacientes">Listar Todos os Pacientes</a>
                             <a class="dropdown-item" href="ExcluirPacientePorCpf.jsp">Excluir Paciente</a>
                         </div>
                     </li>
@@ -144,7 +144,7 @@
     
     <div class="corpo">
         <br><br><br>
-        <h1 class="titulo">Página Principal do Sistema AVICENA!</h1>
+        <h3 class="titulo">Página Principal do Sistema AVICENA!</h3>
        
     </div>
     </div>        <footer class="footer">                
