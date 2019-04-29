@@ -54,9 +54,10 @@
                
                 %>                
                 <input type="text" value="<%= resultadoDaAtualizacao%>" size="100"><br><br>
-                                       
-                <input type="button" value = "Retornar para a Página Principal do SISTEMA AVICENA" onclick="history.go(-2)">
-            <br>
+                     
+            <form action="PaginaInicial.jsp" method="POST">
+                <input type="submit" value="Retornar para a Página Principal do SISTEMA AVICENA"><br><br>
+            </form>            
             
         </div>
 

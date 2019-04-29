@@ -14,8 +14,8 @@ public class PacienteDAO {
 		int novoId = -1; 
                 
 		String query = "INSERT INTO paciente (nomePaciente, celMensagemPaciente, "
-                        + "foneResidencial, foneComercial, emailPaciente, cpfPaciente"
-                        + "cnpjPaciente, logradouro, numeroLogradouro, complemento, bairro"
+                        + "foneResidencial, foneComercial, emailPaciente, cpfPaciente, "
+                        + "cnpjPaciente, logradouro, numeroLogradouro, complemento, bairro, "
                         + "cidade, uf, cep)" 
                         + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
@@ -77,9 +77,7 @@ public class PacienteDAO {
 			ConexaoComBanco.closePreparedStatement(prepStmt);
 			ConexaoComBanco.closeConnection(conn);
 		}
-		return sucessoNaExclusao;
-
-		
+		return sucessoNaExclusao;		
 	}
         
 public boolean atualizarPacienteVO(PacienteVO pacienteVO) {

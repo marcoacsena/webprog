@@ -18,7 +18,7 @@
         <h1>O Paciente foi cadastrado com os seguintes dados:</h1>
               
           <div id="form1">
-            <form method="post" action="cadastrarpaciente">
+            <form>
 
                 <fieldset><legend>Paciente</legend>
                     <br>
@@ -31,7 +31,7 @@
                 </fieldset>
 
                 <br><br>
-                <input type="button" value = "Retornar para a Página Principal do SISTEMA AVICENA" onclick="history.go(-1)">
+                <input type="button" value = "Retornar para a Página Principal do SISTEMA AVICENA" onclick="history.go(-2)">
                 <br>
                 </div>
 
@@ -54,7 +54,9 @@
                 </div>
             </form> 
               
-               <input type="button" value = "Retornar para a Página Principal do SISTEMA AVICENA" onclick="history.go(-2)">
+               <form action="PaginaInicial.jsp" method="POST">
+                <input type="submit" value="Retornar para a Página Principal do SISTEMA AVICENA"><br><br>
+            </form>
 
         <footer class="footer">                
             &copy; Desenvolvido por Luciane Benetti e Marco Sena.

@@ -42,6 +42,10 @@ public class PacienteBO {
         return atualizacao;
     }
 
+    public boolean excluirPacientePorCpf(String cpfPaciente) {
+        return pacienteDAO.Excluir(cpfPaciente);
+    }
+
    
     
 }

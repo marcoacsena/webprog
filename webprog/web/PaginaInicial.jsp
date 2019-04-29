@@ -45,13 +45,13 @@
             <!-- The slideshow -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="Slide1.PNG" alt="Senac" width="1500" height="200">
+                    <img src="Slide1.JPG" alt="Senac" width="1500" height="200">
                 </div>
                 <div class="carousel-item">
-                    <img src="Slide2.PNG" alt="Disciplina" width="1500" height="200">
+                    <img src="Slide2.JPG" alt="Disciplina" width="1500" height="200">
                 </div>
                 <div class="carousel-item">
-                    <img src="Slide3.PNG" alt="Professor" width="1500" height="200">
+                    <img src="Slide3.JPG" alt="Professor" width="1500" height="200">
                 </div>
             </div>
 
@@ -85,9 +85,8 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="PesquisarPacientePorCpf.jsp">Pesquisar Paciente Por CPF</a>
                             <a class="dropdown-item" href="CadastrarPaciente.jsp">Cadastrar Paciente</a>
-                            <a class="dropdown-item" href="listarpacientes">Listar Todos os Pacientes</a>
-                            <a class="dropdown-item" href="#">Atualizar Paciente</a> 
-                            <a class="dropdown-item" href="#">Excluir Paciente</a>
+                            <a class="dropdown-item" href="ListarTodosOsPacientes.jsp">Listar Todos os Pacientes</a>
+                            <a class="dropdown-item" href="ExcluirPacientePorCpf.jsp">Excluir Paciente</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -97,8 +96,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="#">Pesquisar Consulta</a>
                             <a class="dropdown-item" href="#">Cadastrar Consulta</a>
-                            <a class="dropdown-item" href="#">Listar Todas as Consultas</a>
-                            <a class="dropdown-item" href="#">Atualizar Consulta</a> 
+                            <a class="dropdown-item" href="#">Listar Todas as Consultas</a>                             
                             <a class="dropdown-item" href="#">Excluir Consulta</a>
                         </div>
                     </li>

@@ -35,6 +35,11 @@ public class PacienteController {
         return pacienteBO.atualizarPacienteVO(pacienteVO);
     }
 
+    public boolean excluirPacientePorCpf(String cpfPaciente) {
+       
+        return pacienteBO.excluirPacientePorCpf(cpfPaciente);
+    }
+
     
     
 }
