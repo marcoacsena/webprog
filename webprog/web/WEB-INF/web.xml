@@ -16,6 +16,10 @@
         <servlet-name>ListarPacientes</servlet-name>
         <servlet-class>Servlets.ListarPacientes</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ValidarUsuario</servlet-name>
+        <servlet-class>Servlets.ValidarUsuario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Crud</servlet-name>
         <url-pattern>/crud</url-pattern>
@@ -33,8 +37,12 @@
         <url-pattern>/listarpacientes</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
-        <welcome-file>PaginaInicial.jsp</welcome-file>
+        <welcome-file>Index.jsp</welcome-file>
     </welcome-file-list>
+    <servlet-mapping>
+        <servlet-name>ValidarUsuario</servlet-name>
+        <url-pattern>/validarusuario</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

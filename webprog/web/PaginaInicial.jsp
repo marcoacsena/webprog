@@ -147,7 +147,9 @@
         <h3 class="titulo">Sistema AVICENA - Especialidades Médicas</h3>
         
 
-    </div>        <footer class="footer">                
+    </div>       
+                            
+        <footer class="footer">                
             &copy; Desenvolvido por Luciane Benetti e Marco Sena.
         </footer>
 
