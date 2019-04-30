@@ -23,6 +23,7 @@
            <fieldset><legend><a>Insira os Dados para Cadastrar o Usuário</a></legend><br><br>
 
               <form action="usuario" method="post">
+                  <input type="hidden" id="cadastrar" name="cadastrar" value="cadastrar">
                   Nome  : <input type="text" name="nome" required=""> <br><br>
                   Senha : <input type="password" name="senha" required=""> <br><br>
                   <input type="submit" name="login" value="Cadastrar"/>

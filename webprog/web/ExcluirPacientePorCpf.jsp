@@ -25,7 +25,7 @@
                     CPF<a>*</a>: 
                     <input type="text" name="cpfpaciente" required><br><br>
                     
-                    <input type="submit" value = "Excluir Paciente">                
+                    <input type="submit" value="Excluir Paciente">                
 
                 </fieldset>                
             </form> <br><br>

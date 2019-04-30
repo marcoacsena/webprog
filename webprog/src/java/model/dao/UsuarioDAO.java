@@ -69,8 +69,36 @@ public class UsuarioDAO {
 			ConexaoComBanco.closeConnection(conn);
 		}
 		return usuarioVO;
-    }
+    }       
 
-       
+    public UsuarioVO validarUsuarioVO(UsuarioVO usuarioVO) {
+        
+        String query = "SELECT * FROM usuario";
+				
+		Connection conn = ConexaoComBanco.getConnection();
+		PreparedStatement prepStmt = ConexaoComBanco.getPreparedStatement(conn, query);
+					
+
+		try {
+			//prepStmt.setString(1, senha);
+			ResultSet result = prepStmt.executeQuery();
+
+			while (result.next()){
+				usuarioVO = new UsuarioVO();
+				
+				usuarioVO.setCodigoUsuario(result.getInt("codigoUsuario"));
+                                usuarioVO.setLogin(result.getString("login"));
+                                usuarioVO.setSenha(result.getString("senha"));								
+			}                        
+                      
+		} catch(SQLException e) {
+			System.out.println("Erro ao executar a Query de Consulta de funcionarios!Causa: \n: " + e.getMessage());
+		} finally {
+			ConexaoComBanco.closeStatement(conn);
+			ConexaoComBanco.closeConnection(conn);
+		}
+		return usuarioVO;
+        
+    }
     
 }

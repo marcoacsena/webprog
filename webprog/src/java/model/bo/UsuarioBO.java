@@ -8,13 +8,6 @@ import model.vo.UsuarioVO;
 public class UsuarioBO {
     
      UsuarioDAO usuarioDAO = new UsuarioDAO();
-
-//    public boolean validarUsuarioVO(String user, String password) {
-//        
-//        return usuarioDAO.validarUsuario (user, password);
-//        
-//    }
-
     
     public int cadastrarUsuarioVO(UsuarioVO usuarioVO) {
         int novoId;
@@ -25,6 +18,11 @@ public class UsuarioBO {
         } else{ novoId = usuarioDAO.inserir(usuarioVO);}
         
         return novoId;
+    }
+
+    public UsuarioVO validarUsuarioVO(UsuarioVO usuarioVO) {
+        
+        return usuarioDAO.validarUsuarioVO (usuarioVO);
     }
     
 }
