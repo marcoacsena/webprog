@@ -1,16 +1,20 @@
 package model.vo;
 
-public class Usuario {
+public class UsuarioVO {
     
+    private int codigoUsuario;
     private String login;
     private String senha;
 
-    public Usuario() {
+    public UsuarioVO() {
     }
 
-    public Usuario(String login, String senha) {
-        this.login = login;
-        this.senha = senha;
+    public int getCodigoUsuario() {
+        return codigoUsuario;
+    }
+
+    public void setCodigoUsuario(int codigoUsuario) {
+        this.codigoUsuario = codigoUsuario;
     }
 
     public String getLogin() {
@@ -31,8 +35,9 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "login:" + login + ", senha:" + senha + '}';
+        return "UsuarioVO{" + "codigoUsuario:" + codigoUsuario + ", login:" + login + ", senha:" + senha + '}';
     }
+
     
     
 }

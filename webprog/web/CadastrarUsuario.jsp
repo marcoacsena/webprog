@@ -9,7 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="text/css" rel="stylesheet" href="PaginaInicial.css">
+        <title>Tela de Cadastro</title>
     </head>
 <body>
         <div class="principal">
@@ -18,18 +20,18 @@
        </div>
 
          <div class="logincadastro">
-           <fieldset><legend><a>Login de Usuários</a></legend><br><br>
+           <fieldset><legend><a>Insira os Dados para Cadastrar o Usuário</a></legend><br><br>
 
-              <form action="validarusuario" method="post">
+              <form action="usuario" method="post">
                   Nome  : <input type="text" name="nome" required=""> <br><br>
                   Senha : <input type="password" name="senha" required=""> <br><br>
-                  <input type="submit" name="login" value="OK"/>
+                  <input type="submit" name="login" value="Cadastrar"/>
 
               </form><br> 
 
-                <form action="CadastrarUsuario.jsp" method="post">
-                       Não sou cadastrado <input type="submit" value = "Clique aqui!">
-                </form> 
+                <form action="sairdosistema" method="post">
+                        <input type="submit" value = "sair">
+                    </form> 
            </fieldset>
          </div>
         </form>
