@@ -66,7 +66,7 @@
 
     </div>
     
-    </head>
+</head>
     
 <body>
     
@@ -76,7 +76,7 @@
        </div>
 
          <div class="logincadastro">
-           <fieldset><legend><a>Login de Usuários</a></legend><br><br>
+           <fieldset><legend><a>Faça o Login para acesssar o sistema Avicena</a></legend><br><br>
 
               <form action="usuario" method="post">
                   <input type="hidden" id="validar" name="validar" value="validar">
@@ -101,6 +101,7 @@
 <footer class="footer">                
             &copy; Desenvolvido por Luciane Benetti e Marco Sena.
 </footer>
+</div> 
     
 </body>
 </html>
